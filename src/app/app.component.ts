@@ -11,6 +11,12 @@ export class AppComponent {
   amount: number = 0.0;
   height: number = 0.0;
 
+  car = {
+    make: 'Toyota',
+    model: 'Rush',
+    year: '2020'
+  };
+
   onHeightChange(event: Event) {
     const target = event.target;
     if (target instanceof HTMLInputElement) {
