@@ -10,12 +10,20 @@ export class AppComponent {
   date: string = '';
   amount: number = 0.0;
   height: number = 0.0;
+  miles: number = 0.0;
 
   car = {
     make: 'Toyota',
     model: 'Rush',
     year: '2020'
   };
+
+  onMilesChange(event: Event) {
+    const target = event.target;
+    if (target instanceof HTMLInputElement) {
+      this.miles = parseFloat(target.value);
+    }
+  }
 
   onHeightChange(event: Event) {
     const target = event.target;
