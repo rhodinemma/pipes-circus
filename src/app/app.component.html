@@ -1,6 +1,17 @@
-<div>
-  <label>Payee Name</label>
-  <input #myInput (input)="onNameChange(myInput.value)" />
-</div>
+<div class="container mt-3">
+  <h3>Payment Form</h3>
 
-{{ name | titlecase }}
+  <div class="row">
+    <div class="form-group col">
+      <label>Payee Name</label>
+      <input class="form-control" #myInput (input)="onNameChange(myInput.value)" />
+    </div>
+
+    <div class="col">
+      <label><b>Name</b></label>
+      <div>
+        {{ name | titlecase }}
+      </div>
+    </div>
+  </div>
+</div>
