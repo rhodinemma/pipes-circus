@@ -20,9 +20,6 @@ export class ConvertPipe implements PipeTransform {
       default:
         throw new Error('Target unit not supported');
     }
-
-    // convert miles to kilometers
-    return value * 1.60934;
   }
 
 }
