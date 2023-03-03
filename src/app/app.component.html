@@ -17,7 +17,7 @@
 
   <div class="row mt-3">
     <div class="form-group col">
-      <label>Payement Date</label>
+      <label>Payment Date</label>
       <input type="date" class="form-control" (input)="onDateChange($event)" />
     </div>
 
@@ -25,6 +25,20 @@
       <label><b>Payment Date</b></label>
       <div>
         {{ date | date: "MMMM d, y" }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="form-group col">
+      <label>Payment Amount</label>
+      <input class="form-control" (input)="onAmountChange($event)" />
+    </div>
+
+    <div class="col">
+      <label><b>Payment Amount</b></label>
+      <div>
+        {{ amount | currency }}
       </div>
     </div>
   </div>
