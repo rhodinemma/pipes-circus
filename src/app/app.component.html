@@ -1,6 +1,75 @@
-<div>
-  <label>Payee Name</label>
-  <input #myInput (input)="onNameChange(myInput.value)" />
+<div class="container mt-3">
+  <h3>Payment Form</h3>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Payee Name</label>
+      <input class="form-control" #myInput (input)="onNameChange(myInput.value)" />
+    </div>
+
+    <div class="col">
+      <label><b>Name</b></label>
+      <div>
+        {{ name | titlecase }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="form-group col">
+      <label>Payment Date</label>
+      <input type="date" class="form-control" (input)="onDateChange($event)" />
+    </div>
+
+    <div class="col">
+      <label><b>Payment Date</b></label>
+      <div>
+        {{ date | date: "MMMM d, y" }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="form-group col">
+      <label>Payment Amount</label>
+      <input class="form-control" (input)="onAmountChange($event)" />
+    </div>
+
+    <div class="col">
+      <label><b>Payment Amount</b></label>
+      <div>
+        {{ amount | currency: "UGX" }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="form-group col">
+      <label>Height</label>
+      <input class="form-control" (input)="onHeightChange($event)" />
+    </div>
+
+    <div class="col">
+      <label><b>Height</b></label>
+      <div>
+        {{ height | number: "1.1-3" }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="form-group col">
+      <label>Miles</label>
+      <input class="form-control" (input)="onMilesChange($event)" />
+    </div>
+
+    <div class="col">
+      <label><b>Kilometers</b></label>
+      <div *ngIf="(miles | convert: 'km') > 10">
+        {{ miles | convert: "km" | number: '1.0-2' }}
+      </div>
+    </div>
+  </div>
 </div>
 
-{{ name }}
+{{ car | json }}
